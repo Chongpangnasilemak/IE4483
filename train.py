@@ -11,7 +11,7 @@ def main():
     val_dir = "datasets/val"
 
     # Setup target device
-    device = "mps" if torch.backends.mps.is_available() else"cuda" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 
     # Create auto-transforms
     transforms = torchvision.models.VGG19_Weights.DEFAULT.transforms() 
